@@ -1,3 +1,4 @@
+import textwrap
 menu = [
     {
         "appetizers":[
@@ -37,16 +38,16 @@ menu = [
 
 
 if __name__ == "__main__":
-    print("""
+    p = print(textwrap.dedent("""
     **************************************
     **    Welcome to the Snakes Cafe!   **
     **    Please see our menu below.    **
     **
     ** To quit at any time, type "quit" **
     **************************************
-    """)
+    """))
     
-    print("""
+    p = print(textwrap.dedent("""
     Appetizers
     ----------
     Wings
@@ -71,27 +72,29 @@ if __name__ == "__main__":
     Coffee
     Tea
     Unicorn Tears
-    """)
+    """))
 
-    print("""
+    print(textwrap.dedent("""
     
     ***********************************
     ** What would you like to order? **
     ***********************************
-    """)
+    """))
+
+    
 
     userinput = ''
     amount = {}   
 
     while userinput != 'quit':
-        userinput = input('    > ')
+        userinput = input(textwrap.dedent('    > '))
         if userinput in amount:
             amount[userinput]+=1
         else:
             amount[userinput]=1
 
         if userinput == 'quit':
-            print('    Thank You!')
+            print(textwrap.dedent('    Thank You!'))
 
         else:
             print('** ', amount[userinput], ' orders of ', userinput,' have been added to your meal **')
